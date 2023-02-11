@@ -70,7 +70,7 @@ docker build -t wp-nginx .
 ### Start Container
 ```shell
 # 部署机器
-docker run -dp 80:80 --name wp-nginx wp-nginx:latest
+docker run -dp 80:80 -v ~/docker-volume/wp/nginx/config:/etc/nginx/sites-available -v ~/docker-volume/wp/nginx/log:/var/log/nginx -v ~/docker-volume/wp/nginx/web-root:/var/www/html --name wp-nginx wp-nginx
 ```
 
 ### Finish
